@@ -1,5 +1,16 @@
 var countdownGenerator = function (x) {
-  /* your code here */
+  var counter = x;
+
+  return function() {
+    if ( counter > 0 )
+      console.log( 'T-minus ' + counter-- + '...');
+    else if ( counter === 0 ){
+      console.log( 'Blast Off!' );
+      counter = -1;
+    }
+    else
+      console.log( 'Rockets already gone, bub!' );
+  };
 };
 
 var countdown = countdownGenerator(3);
